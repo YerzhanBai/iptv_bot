@@ -121,12 +121,12 @@ def finish_form(message):
     user_data[message.chat.id]['internet'] = message.text
     data = user_data[message.chat.id]
     text = (
-    f"📝 *Новая заявка на IPTV:*\n\n"
-    f"👤 Имя: {data['name']}\n"
-    f"🌍 Страна: {data['country']}\n"
-    f"📺 Устройство: {data['device']}\n"
-    f"📶 Интернет: {data['internet']}\n\n"
-    f"🔗 Пользователь: @{message.from_user.username or 'без username'}"
+         f"📝 *Новая заявка на IPTV:*\n\n"
+         f"👤 Имя: {data['name']}\n"
+         f"🌍 Страна: {data['country']}\n"
+         f"📺 Устройство: {data['device']}\n"
+         f"📶 Интернет: {data['internet']}\n\n"
+         f"🔗 Пользователь: @{message.from_user.username or 'без username'}"
     )
     bot.send_message(ADMIN_ID, text, parse_mode='Markdown')
     bot.send_message(message.chat.id, "✅ Спасибо! Ваша заявка отправлена. Мы скоро свяжемся с вами.")
