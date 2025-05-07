@@ -4,7 +4,7 @@ import telebot
 from telebot import types
 
 bot = telebot.TeleBot("7929099756:AAH3x2IeqQTbktuKu20Ab87csVL3BnfHrtM")
-ADMIN_ID = 913181906  # Telegram ID владельца для приёма заявок
+CHANNEL_ID = -1002286252627  # Telegram ID владельца для приёма заявок
 
 # Хранилище для анкет
 user_data = {}
@@ -128,7 +128,7 @@ def finish_form(message):
          f"📶 Интернет: {data['internet']}\n\n"
          f"🔗 Пользователь: @{message.from_user.username or 'без username'}"
     )
-    bot.send_message(ADMIN_ID, text, parse_mode='Markdown')
+    bot.send_message(CHANNEL_ID, text, parse_mode='Markdown')
     bot.send_message(message.chat.id, "✅ Спасибо! Ваша заявка отправлена. Мы скоро свяжемся с вами.")
 
 bot.polling()
